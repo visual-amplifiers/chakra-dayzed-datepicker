@@ -135,7 +135,7 @@ export const RangeDatepicker: React.FC<RangeDatepickerProps> = (props) => {
   } = mergedProps;
 
   // chakra popover utils
-  const [dateInView, setDateInView] = useState(selectedDates !== undefined ? selectedDates[0] : new Date());
+  const [dateInView, setDateInView] = useState(selectedDates == undefined ? new Date() : selectedDates[0]);
   const [offset, setOffset] = useState(0);
   const { onOpen, onClose, isOpen } = useDisclosure({ defaultIsOpen });
 
