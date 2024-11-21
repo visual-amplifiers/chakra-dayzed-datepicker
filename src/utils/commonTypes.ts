@@ -46,7 +46,8 @@ export interface CalendarPanelProps {
 export interface PropsConfigs {
   dateNavBtnProps?: ButtonProps;
   dayOfMonthBtnProps?: DayOfMonthBtnStyleProps;
-  inputProps?: {inputWrapperProps: FlexProps} & InputProps;
+  inputProps?: InputProps;
+  inputWrapperProps?: FlexProps;
   triggerBtnProps?: ButtonProps;
   popoverCompProps?: PopoverCompProps;
   calendarPanelProps?: CalendarPanelProps;
