@@ -197,7 +197,7 @@ export const SingleDatepicker: React.FC<SingleDatepickerProps> = ({
         </PopoverTrigger>
       ) : null}
       {!children && restProps.triggerVariant === 'input' ? (
-        <Flex position="relative" alignItems={'center'} {...restProps.propsConfigs?.inputWrapperProps}>
+        <Flex position="relative" alignItems={'center'} w="100%" {...restProps.propsConfigs?.inputWrapperProps}>
           <PopoverAnchor>
             <Input
               id={id}
