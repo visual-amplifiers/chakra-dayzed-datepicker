@@ -85,10 +85,10 @@ export const RangeCalendarPanel: React.FC<RangeCalendarPanelProps> = ({
 };
 
 interface RangeProps extends DatepickerProps {
-  selectedDates: Date[] | undefined;
+  selectedDates: Date[];
   configs?: DatepickerConfigs;
   disabled?: boolean;
-  children?: (value: Date[] | undefined) => React.ReactNode;
+  children?: (value: Date[]) => React.ReactNode;
   defaultIsOpen?: boolean;
   closeOnSelect?: boolean;
   onDateChange: (date: Date[]) => void;
@@ -135,7 +135,7 @@ export const RangeDatepicker: React.FC<RangeDatepickerProps> = (props) => {
   } = mergedProps;
 
   // chakra popover utils
-  const [dateInView, setDateInView] = useState(selectedDates == undefined ? new Date() : selectedDates[0]);
+  const [dateInView, setDateInView] = useState(selectedDates[0] || new Date());
   const [offset, setOffset] = useState(0);
   const { onOpen, onClose, isOpen } = useDisclosure({ defaultIsOpen });
 
@@ -153,12 +153,12 @@ export const RangeDatepicker: React.FC<RangeDatepickerProps> = (props) => {
 
   const onPopoverClose = () => {
     onClose();
-    setDateInView(selectedDates && selectedDates[0] || new Date());
+    setDateInView(selectedDates[0] || new Date());
     setOffset(0);
   };
 
   const handleOnDateSelected: OnDateSelected = ({ selectable, date }) => {
-    if (!selectable || !selectedDates) {
+    if (!selectable) {
       return;
     }
     let newDates = [...selectedDates];
@@ -187,10 +187,10 @@ export const RangeDatepicker: React.FC<RangeDatepickerProps> = (props) => {
   };
 
   // eventually we want to allow user to freely type their own input and parse the input
-  let intVal = selectedDates && selectedDates[0]
+  let intVal = selectedDates[0]
     ? `${format(selectedDates[0], datepickerConfigs.dateFormat)}`
     : `${datepickerConfigs.dateFormat}`;
-  intVal += selectedDates && selectedDates[1]
+  intVal += selectedDates[1]
     ? ` - ${format(selectedDates[1], datepickerConfigs.dateFormat)}`
     : ` - ${datepickerConfigs.dateFormat}`;
 
