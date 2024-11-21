@@ -222,7 +222,11 @@ export const RangeDatepicker: React.FC<RangeDatepickerProps> = (props) => {
         </PopoverTrigger>
       ) : null}
       {!children && triggerVariant === 'input' ? (
-        <Flex position="relative" alignItems={'center'}>
+        <Flex
+          position="relative"
+          alignItems={'center'}
+          {...propsConfigs?.inputProps?.inputWrapperProps}
+        >
           <PopoverAnchor>
             <Input
               id={id}
