@@ -2,6 +2,7 @@ import { ButtonProps } from '@chakra-ui/button';
 import {
   BoxProps,
   DividerProps,
+  FlexProps,
   HeadingProps,
   InputProps,
   PopoverBodyProps,
@@ -45,7 +46,7 @@ export interface CalendarPanelProps {
 export interface PropsConfigs {
   dateNavBtnProps?: ButtonProps;
   dayOfMonthBtnProps?: DayOfMonthBtnStyleProps;
-  inputProps?: InputProps;
+  inputProps?: {inputWrapperProps: FlexProps} & InputProps;
   triggerBtnProps?: ButtonProps;
   popoverCompProps?: PopoverCompProps;
   calendarPanelProps?: CalendarPanelProps;
