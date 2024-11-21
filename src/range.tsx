@@ -225,7 +225,7 @@ export const RangeDatepicker: React.FC<RangeDatepickerProps> = (props) => {
         <Flex
           position="relative"
           alignItems={'center'}
-          {...propsConfigs?.inputProps?.inputWrapperProps}
+          {...propsConfigs?.inputWrapperProps}
         >
           <PopoverAnchor>
             <Input
