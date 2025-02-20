@@ -113,6 +113,9 @@ export const CalendarPanel: React.FC<CalendarPanelProps> = ({
                 <Flex flexDir="row">
                   <Select
                     onChange={handleMonthChange}
+                    // Resolves safari issue whereby onChange triggers blur event closing the
+                    // popover.
+                    onBlur={(e) => e.preventDefault()}
                     {...propsConfigs?.monthSelectProps}
                     value={calendar.month}
                   >
@@ -124,6 +127,9 @@ export const CalendarPanel: React.FC<CalendarPanelProps> = ({
                   </Select>
                   <Select
                     onChange={handleYearChange}
+                    // Resolves safari issue whereby onChange triggers blur event closing the
+                    // popover.
+                    onBlur={(e) => e.preventDefault()}
                     {...propsConfigs?.yearSelectProps}
                     value={calendar.year}
                   >
