@@ -180,10 +180,11 @@ const App = () => {
                         ])
                       }
                       propsConfigs={{}}
-                      minDate={subDays(demoDate, 8)}
-                      maxDate={addDays(demoDate, 8)}
+                      // minDate={subDays(demoDate, 8)}
+                      // maxDate={addDays(demoDate, 8)}
                       onDateChange={setDate}
                       closeOnSelect={isSingleChecked}
+                      showYearMonthPicker
                     />
                   </Flex>
                   <Flex gap="1rem" alignItems="center">
